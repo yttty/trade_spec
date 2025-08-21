@@ -33,7 +33,7 @@
                 "account": "bntest01",
                 "exch_name": "BINANCE",
                 "account_type": "UNIFIED",
-                "market_type": "SPOT",
+                "market_type": "MARGIN",
                 "leverage": 1
             }
         ],
@@ -63,7 +63,7 @@
         "swap_fr_cond": "",
         "spread_interval": 0.01,
         "notional_interval": 50000,
-        "mode": "auto",
+        "mode": "manual",
         "manual_settings": [
             {
                 "symbol": "BTC_USDT",
