@@ -1,0 +1,119 @@
+{
+    "basic_config": {
+        "product_name": "TEST",
+        "strat_name": "bntest01",
+        "init_database": false,
+        "server_sock": "",
+        "log_retention_days": 14,
+        "max_process_num": 10,
+        "open_process_num": 5,
+        "close_process_num": 5
+    },
+    "debug_config": {
+        "debug_mode": false,
+        "debug_main": false,
+        "debug_trade": false,
+        "debug_symbol": "",
+        "debug_arb_direction": "SHORT",
+        "debug_action": "OPEN",
+        "debug_reb": false
+    },
+    "exchs_config": {
+        "local_addrs": [],
+        "order_interval_ms": 0,
+        "legs_config": [
+            {
+                "account": "bntest01",
+                "exch_name": "BINANCE",
+                "account_type": "UNIFIED",
+                "market_type": "UFUTURES",
+                "leverage": 4
+            },
+            {
+                "account": "bntest01",
+                "exch_name": "BINANCE",
+                "account_type": "UNIFIED",
+                "market_type": "SPOT",
+                "leverage": 1
+            }
+        ],
+        "pairs": []
+    },
+    "market_config": {
+        "sample_ms": 1000,
+        "ema_half_life_ms": 5000
+    },
+    "analyzer_config": {
+        "enabled_arb_directions": {
+            "SHORT": true,
+            "LONG": false
+        },
+        "borrow_apy_thresh": 0.1,
+        "bottom_percentile": "p10_24h",
+        "top_percentile": "p95_24h",
+        "open_spread_cond": "((score > 5e-4) & (spread > p60_24h) & (fr_next >= 1e-4) & (spread > -3e-4)) | ((score > 15e-4) & (spread > p70_24h) & (fr_next > -2e-4) & (spread > -5e-4))",
+        "open_fr_cond": "(fr_next >= 1e-4) & (fr_1d >= 1e-4) & (fr_3d >= 0.8e-4) & (fr_3d >= fr_7d) & (spread > p70_24h)",
+        "open_filter_cond": "(slippage < 8e-4) & (spread > -6e-4) & (fr_next > -1e-4)",
+        "open_spread_thresh": "p30_24h",
+        "close_spread_cond": "(((score < -3e-4) & (fr_next < 0.5e-4)) | ((score < -5e-4) & (fr_next < 1e-4)) | (score < -15e-4)) & (slippage < 2e-4)",
+        "close_fr_cond": "(fr_next < 0) & (fr_1d < 0) & (fr_3d < 0.5e-4) & (spread < p20_24h)",
+        "close_filter_cond": "",
+        "close_spread_thresh": "p70_24h",
+        "swap_spread_cond": "",
+        "swap_fr_cond": "",
+        "spread_interval": 0.01,
+        "notional_interval": 50000,
+        "mode": "auto",
+        "manual_settings": [
+            {
+                "symbol": "BTC_USDT",
+                "max_bid_notional": 0,
+                "max_ask_notional": 0,
+                "bid_thresh": -0.1,
+                "ask_thresh": 0.1
+            }
+        ]
+    },
+    "risk_config": {
+        "limited_symbols": [],
+        "disable_trade_symbols": [
+            "USDC_USDT",
+            "BNB_USDT"
+        ],
+        "disable_open_symbols": [
+            "USDC_USDT",
+            "BNB_USDT"
+        ],
+        "banned_reb_symbols": [],
+        "enable_loan": false,
+        "delta_ratio_thresh": 0.01,
+        "max_position_ratio_buffer": 0.01,
+        "auto_add_fee_coin": false,
+        "enable_hedge_exposure": false,
+        "enable_hedge_liquidated": false,
+        "enable_auto_clean": false,
+        "enable_rebalance_equity": false,
+        "clean_position_thresh": 10.0,
+        "symbol_limit": 0.005,
+        "hard_symbol_limit": 0.1,
+        "open_interest_limit": 0.05,
+        "volume_limit": 0.05,
+        "symbol_discount_limit": {},
+        "leg_discount_limit": {},
+        "leg_direction_limit": 1,
+        "open_interest_thresh": 150000.0,
+        "volume_thresh": 100000.0
+    },
+    "trader_config": {
+        "depth_ratio": 0.5,
+        "taker_slippage": 0.003,
+        "min_order_notional": 0,
+        "max_order_notional": 1000,
+        "maker_only": false,
+        "cancel_leeway_tick": 2,
+        "cancel_ms": 10000,
+        "min_front_notional": 10.0,
+        "reverse_quote_hedge": false,
+        "sma_tick": 100
+    }
+}
