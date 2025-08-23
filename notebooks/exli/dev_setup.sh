@@ -9,5 +9,5 @@ fi
 eval "$(conda shell.bash hook)"
 conda activate $ENV_NAME
 
-python -m pip install -e ../modules/falcon_exchs
-python -m pip install -e ../modules/falcon_utils
+python -m pip install ipykernel black mypy pytest pytest-asyncio
+python -m pip install -e ../../modules/exli

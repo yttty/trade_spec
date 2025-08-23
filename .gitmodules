@@ -1,0 +1,3 @@
+[submodule "modules/exli"]
+	path = modules/exli
+	url = https://github.com/tyerxel/exli.git
