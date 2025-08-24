@@ -66,7 +66,7 @@
         "mode": "manual",
         "manual_settings": [
             {
-                "symbol": "BTC_USDT",
+                "symbol": "SOL_USDT",
                 "max_bid_notional": 0,
                 "max_ask_notional": 0,
                 "bid_thresh": -0.1,
@@ -108,7 +108,7 @@
         "depth_ratio": 0.5,
         "taker_slippage": 0.003,
         "min_order_notional": 0,
-        "max_order_notional": 1000,
+        "max_order_notional": 15,
         "maker_only": false,
         "cancel_leeway_tick": 2,
         "cancel_ms": 10000,
