@@ -1,0 +1,35 @@
+{
+    "exchs_config": {
+        "local_addrs": [],
+        "redis_url": "redis://localhost:6379/0",
+        "order_interval_ms": 10,
+        "legs_config": [
+            {
+                "exch_name": "BINANCE",
+                "account_type": "SPOT",
+                "market_type": "SPOT",
+                "account": "bntest01",
+                "leverage": 1
+            }
+        ]
+    },
+    "trader_config": {
+        "symbol": "USD1_USDT",
+        "debug_mode": false,
+        "verbose": false,
+        "redis_url": "redis://localhost:6379/2",
+        "steady_rate": 1,
+        "maker_rate_deviation": 0.00005,
+        "taker_rate_deviation": 0.0002,
+        "stop_quote_rate_deviation": 0.005,
+        "max_ask_qty": 0,
+        "max_bid_qty": 100,
+        "depth_ratio": 0.5,
+        "min_order_notional": 10,
+        "max_order_notional": 10,
+        "maker_only": false,
+        "cancel_leeway_tick": 0,
+        "cancel_ms": 15000,
+        "min_front_notional": 1000
+    }
+}
